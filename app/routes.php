@@ -13,6 +13,14 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::get('/log-in', array(
+Route::get('log-in', array(
 						'as' => 'account-log-in',
 						'uses' => 'UserController@login'));
+
+Route::get('timeline', array(
+						'as' => 'timeline',
+						'uses' => 'PostController@showTimeline'));
+
+Route::get('post', array(
+						'as' => 'post',
+						'uses' => 'PostController@showPost'));
