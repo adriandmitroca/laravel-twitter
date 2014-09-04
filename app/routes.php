@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'PostController@showTimeline');
 
 Route::get('log-in', array(
 						'as' => 'account-log-in',

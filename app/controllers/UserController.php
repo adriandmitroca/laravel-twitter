@@ -3,7 +3,8 @@
 class UserController extends BaseController {
 
 	public function login()	{
-		return View::make('account.login');
+		$title = 'Log in';
+		return View::make('account.login')->with('title', $title);
 	}
 
 }

@@ -1,10 +1,11 @@
-<?php
+	<?php
 
 class PostController extends BaseController {
 
 	public function showTimeline() {
 		$posts = Post::with('user')->orderBy('created_at', 'desc')->get();
-		return View::make('timeline')->with('posts', $posts);
+		$title = 'Timeline';
+		return View::make('timeline')->with('posts', $posts)->with('title', $title);
 	}
 
 	public function showPost($id) {

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Twitter</title>
+    <title>{{ $title . ' | '}}Twitter</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -34,8 +34,7 @@
 
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
-				        <li class="active"><a href="#">Home</a></li>
-				        <li><a href="#">Timeline</a></li>
+				        <li class="active"><a href="{{ URL::action('PostController@showTimeline') }}">Home</a></li>
 				        <li><a href="#">Profile</a></li>
 				        <li><a href="#">Trends</a></li>
 				      </ul>
