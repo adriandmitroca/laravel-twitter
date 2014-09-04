@@ -40,7 +40,7 @@
 				      </ul>
 
 				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="#">Log in</a></li>
+				        <li><a href="#" data-toggle="modal" data-target=".login-modal">Log in</a></li>
 				        <li><a href="#">Sign up</a></li>
 				      </ul>
 				    </div>
@@ -50,6 +50,33 @@
 
 		<div class="content">
 			@yield('content')
+		</div>
+
+		<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		       <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title">Fill fields below to log in</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form role="form" action="{{ URL::route('account-log-in') }}" method="post">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address or username</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  </div>
+
+				  {{ Form::token() }}
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary">Log in</button>
+		    </div>
+		  </div>
 		</div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
