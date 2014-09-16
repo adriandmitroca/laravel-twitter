@@ -11,14 +11,14 @@
 		<form role="form" action="{{ URL::route('account-sign-in') }}" method="post">
 		  <div class="form-group">
 		    <label for="username">Email address or username</label>
-		    <input type="username" class="form-control" id="username" name="username" {{ Input::old('username') ? ' value="' . Input::old('username') . '"' : '' }}>
+		    <input type="username" class="form-control {{ $errors->has('username') ? 'form-error' : '' }}" id="username" name="username" {{ Input::old('username') ? ' value="' . Input::old('username') . '"' : '' }}>
   			@if($errors->has('username'))
 				{{ $errors->first('username') }}
 			@endif
 		  </div>
 		  <div class="form-group">
 		    <label for="password">Password</label>
-		    <input type="password" class="form-control" id="password" name="password" {{ Input::old('password') ? ' value="' . Input::old('password') . '"' : '' }}>
+		    <input type="password" class="form-control {{ $errors->has('password') ? 'form-error' : '' }}" id="password" name="password" {{ Input::old('password') ? ' value="' . Input::old('password') . '"' : '' }}>
 			@if($errors->has('password'))
 				{{ $errors->first('password') }}
 			@endif	

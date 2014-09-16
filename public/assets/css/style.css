@@ -23,3 +23,6 @@
     width: 150px;
     height: 150px;
 }
+.form-error {
+    border: 1px solid #ff0000;
+}

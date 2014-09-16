@@ -13,7 +13,7 @@
 		  	<div class="panel-body">
 		    	{{ $post->content }}
 		  	</div>
-  		  	<div class="panel-footer text-right">{{ $post->created_at }}</div>
+  		  	<div class="panel-footer text-right">{{ $post->created_at }}, <a href="{{ URL::route('post', array($post->id, $post->slug)) }}">#</a></div>
 		</div>
 	@endforeach
 @stop
