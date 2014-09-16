@@ -40,8 +40,13 @@
 				      </ul>
 
 				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="{{ URL::route('account-log-in') }}">Log in</a></li>
+				      @if(Auth::check())
+				      	<li><a href="#" class="user"><img src="{{ URL::to('/') . '/media/avatars/' . Auth::user()->avatar }}" class="img-circle">  Hello, {{ Auth::user()->username }}</a></li>
+				      	<li><a href="{{ URL::route('account-sign-out') }}">Sign out</a></li>
+				      @else
+				        <li><a href="{{ URL::route('account-sign-in') }}">Log in</a></li>
 				        <li><a href="#">Sign up</a></li>
+				      @endif
 				      </ul>
 				    </div>
 				  </div>
@@ -49,6 +54,9 @@
 		</div>
 
 		<div class="col-md-offset-2 col-md-8 content">
+			@if(Session::has('alert'))
+				<div class="alert alert-danger" role="alert">{{ Session::get('alert') }}</div>
+			@endif
 			@yield('content')
 		</div>
 

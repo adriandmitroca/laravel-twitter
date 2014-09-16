@@ -1,22 +1,25 @@
 .content {
-	padding-top: 100px;
+    padding-top: 100px;
 }
-
+.navbar a.user {
+    padding: 6px 0 0 0;
+}
+.navbar .user img {
+    height: 40px;
+    width: 40px;
+}
 .profile-head {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
-
 .profile-head h1 {
-	padding-left: 50px;
-	padding-top: 25px;
+    padding-left: 50px;
+    padding-top: 25px;
 }
-
 .profile-head p {
-	padding-left: 50px;
-	color: #777;
+    padding-left: 50px;
+    color: #777;
 }
-
 .profile-head .avatar {
-	width: 150px;
-	height: 150px;
+    width: 150px;
+    height: 150px;
 }
