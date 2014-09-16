@@ -21,6 +21,6 @@ Route::get('timeline', array(
 						'as' => 'timeline',
 						'uses' => 'PostController@showTimeline'));
 
-Route::get('post', array(
+Route::get('post/{id}/{slug}', array(
 						'as' => 'post',
 						'uses' => 'PostController@showPost'));
