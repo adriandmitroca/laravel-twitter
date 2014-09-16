@@ -24,3 +24,7 @@ Route::get('timeline', array(
 Route::get('post/{id}/{slug}', array(
 						'as' => 'post',
 						'uses' => 'PostController@showPost'));
+
+Route::get('{name}', array(
+						'as' => 'profile',
+						'uses' => 'UserController@showProfile'));
