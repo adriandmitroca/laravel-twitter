@@ -32,3 +32,6 @@ Route::get('post/{id}/{slug}', array(
 Route::get('{name}', array(
 						'as' => 'profile',
 						'uses' => 'UserController@showProfile'));
+Route::get('tag/{tag}', array(
+						'as' => 'tag',
+						'uses' => 'PostController@showTag'));

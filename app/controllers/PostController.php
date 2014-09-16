@@ -14,4 +14,10 @@ class PostController extends BaseController {
 		return View::make('post')->with('post', $post)->with('title', $title);
 	}
 
+	public function showTag($tag) {
+		$posts = Post::with('user')->where('content', 'like', '%#'.$tag.'%')->orderBy('created_at', 'desc')->get();
+		$title = '#'.$tag;
+		return View::make('tag')->with('posts', $posts)->with('title', $title)->with('tag', $tag);
+	}
+
 }
