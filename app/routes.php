@@ -35,3 +35,6 @@ Route::get('{name}', array(
 Route::get('tag/{tag}', array(
 						'as' => 'tag',
 						'uses' => 'PostController@showTag'));
+Route::post('add', array(
+						'as' => 'add-post',
+						'uses' => 'PostController@addPost'));

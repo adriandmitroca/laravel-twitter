@@ -1,6 +1,10 @@
 @extends('layout.main')
 
 @section('content')
+@if(Auth::check())
+	@include('addpost')
+@endif
+
 @foreach ($posts as $post)
 <div class="panel panel-default">
   <div class="panel-body">

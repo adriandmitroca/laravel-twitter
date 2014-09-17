@@ -20,4 +20,23 @@ class PostController extends BaseController {
 		return View::make('tag')->with('posts', $posts)->with('title', $title)->with('tag', $tag);
 	}
 
+	public function addPost() {
+		$validator = Validator::make(Input::all(),
+			array('content' => 'required'));
+
+		if($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput;
+		}
+		else {
+			$post = new Post;
+
+			$post->content = Input::get('content');
+			$post->user_id = Auth::user()->id;
+
+			$post->save();
+
+			return Redirect::back()->with('success', 'Your post has been added.');
+		}
+	}
+
 }
