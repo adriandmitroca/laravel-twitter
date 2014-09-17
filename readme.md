@@ -1,6 +1,5 @@
-## Laravel-Twitter
+## laravel-twitter
 
-Maybe someday i will write few words about this project.
 
 ### Features
 
