@@ -32,7 +32,8 @@ class PostController extends BaseController {
 
 			$post->content = Input::get('content');
 			$post->user_id = Auth::user()->id;
-
+			$post->slug = Str::slug(str_limit(Input::get('content'), 50));
+			
 			$post->save();
 
 			return Redirect::back()->with('success', 'Your post has been added.');
